@@ -1,3 +1,7 @@
+# Replication file: empirical example
+# Lee and Ng (2022, ICML)
+# Date: June 13, 2022
+
 rm(list = ls())
 
 library("sketching")
@@ -36,6 +40,7 @@ target_power <- 0.8
 S_constant <- (qnorm(1-target_size) + qnorm(target_power))^2
 tau_limit <- 10
 m_ols <- n*S_constant/tau_limit^2 
+m_ols <- floor(m_ols)
 
 # sketching methods for OLS
 methods <- c("fullsample","bernoulli","unif","leverage","countsketch","srht","fft")
@@ -100,6 +105,7 @@ target_power <- 0.8
 S_constant <- (qnorm(1-target_size) + qnorm(target_power))^2
 tau_limit <- 5
 m_2sls <- n*S_constant/tau_limit^2 
+m_2sls <- floor(m_2sls)
 
 # sketching methods for 2SLS
 methods <- c("fullsample","bernoulli","unif","countsketch","srht","fft")

@@ -1,3 +1,9 @@
+# Replication file: Monte Carlo experiments for OLS
+# Lee and Ng (2022, ICML)
+# Date: June 13, 2022
+# Note: The number of replication is set as "nrep <- 5" for checking the code,
+#       but it needs to be changed to "nrep <- 1000"  for replication purposes.
+
 rm(list = ls())
 
 library("sketching")
@@ -12,7 +18,7 @@ n <- 1e+6
 m <- 500
 p <- 5
 q <- 20
-nrep <- 1000
+nrep <- 5 # This needs to be changed to "nrep <- 1000"  for replication.
 alpha <- 0.05
 cv <- qnorm(1 - alpha/2)
 
@@ -123,13 +129,13 @@ for (i in 1:nrep){
   
 }
 
-  if (i%%1 == 0){
+  if (i%%5 == 0){
     
     print(c(hetero,i))
     
   }  
   
-  if (i%%5 == 0){
+  if (i%%20 == 0){
     
     test_tmp <- (results[1:i,,] > 1.96)
     if (length(methods) == 1){
