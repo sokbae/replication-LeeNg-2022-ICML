@@ -27,6 +27,9 @@ devtools::install_github("https://github.com/sokbae/sketching")
 
 ## Replication Code
 
+The latest version of the paper is included in this Github repository
+(see paper.pdf).
+
 -   Table 1 can be replicated by running monte_carlo/monte_carlo_ols.R.
 
 -   Table 2 can be replicated by running
